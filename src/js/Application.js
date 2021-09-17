@@ -1,5 +1,5 @@
 import EventEmitter from "eventemitter3";
-
+import anime from "animejs";
 export default class Application extends EventEmitter {
   static get events() {
     return {
@@ -9,12 +9,8 @@ export default class Application extends EventEmitter {
 
   constructor() {
     super();
-
-    const button = document.querySelector(".button");
-    button.addEventListener("click", () => {
-      alert("💣");
-    });
-
+    this.init();
     this.emit(Application.events.READY);
   }
+  init() {}
 }
